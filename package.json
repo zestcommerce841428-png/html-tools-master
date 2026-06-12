@@ -1,0 +1,42 @@
+{
+  "name": "webutils",
+  "version": "1.0.0",
+  "description": "纯前端工具集 - 单文件、零构建、可离线使用",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node tests/run.js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"**/ByteDanceVerify.html,**/baidu_verify_*.html,**/js-playground.html,**/code-screenshot.html,**/wave-bg.html\"",
+    "lint:css": "stylelint \"**/*.html\" --custom-syntax postcss-html",
+    "lint:js": "eslint \"**/*.html\" \"assets/js/**/*.js\"",
+    "lint:fix": "npm run lint:css -- --fix",
+    "format": "prettier --write \"**/*.{html,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,js,json,md}\"",
+    "sync": "node scripts/sync-all.js",
+    "sync:tools": "npm run sync"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-plugin-html": "^8.0.0",
+    "htmlhint": "^1.1.4",
+    "postcss-html": "^1.6.0",
+    "prettier": "^3.7.4",
+    "stylelint": "^16.2.0",
+    "stylelint-config-standard": "^39.0.1"
+  },
+  "keywords": [
+    "html",
+    "tools",
+    "no-build",
+    "vanilla-js",
+    "offline-first"
+  ],
+  "author": "chicogong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chicogong/html-tools.git"
+  },
+  "homepage": "https://chicogong.github.io/html-tools/"
+}
